@@ -1,0 +1,397 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Kindle Youth Empowerment Center</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Our story */
+      .story-section {
+        overflow-x: hidden;
+        padding: 2rem 0;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      .story-card {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        background: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .story-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .mission-highlight {
+        color: #666;
+        font-style: italic;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .col-md-4 {
+        flex: 0 0 calc(33.333% - 2rem);
+        margin: 0 1rem;
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: all 0.8s ease;
+      }
+
+      /* Animation classes */
+      .slide-in {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* Add delay to stagger the animations */
+      .col-md-4:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+
+      .col-md-4:nth-child(3) {
+        transition-delay: 0.4s;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .col-md-4 {
+          flex: 0 0 calc(100% - 2rem);
+        }
+      }
+
+      /* Additional styling */
+      .text-center {
+        text-align: center;
+      }
+
+      .mb-4 {
+        margin-bottom: 1.5rem;
+      }
+
+      .mb-5 {
+        margin-bottom: 3rem;
+      }
+
+      .mt-5 {
+        margin-top: 3rem;
+      }
+
+      .h-100 {
+        height: 100%;
+      }
+
+      .p-4 {
+        padding: 1.5rem;
+      }
+
+      .text-muted {
+        color: #6c757d;
+      }
+
+      .display-5 {
+        font-size: 2.5rem;
+        font-weight: 300;
+        line-height: 1.2;
+      }
+
+      .fw-bold {
+        font-weight: 700;
+      }
+
+      /* about */
+      .about-section {
+        background-color: #f8f9fa;
+        padding: 6rem 0;
+      }
+      .about-image {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 15px;
+        object-fit: cover;
+        height: 400px;
+        width: 100%;
+      }
+      .about-image:hover {
+        transform: scale(1.03);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+      .about-content {
+        padding-left: 3rem;
+      }
+      @media (max-width: 768px) {
+        .about-content {
+          padding-left: 0;
+          margin-top: 2rem;
+        }
+      }
+
+      :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #e74c3c;
+        --accent-color: #3498db;
+        --light-bg: #ecf0f1;
+      }
+
+      .hero-section {
+        background: linear-gradient(
+            rgba(44, 62, 80, 0.9),
+            rgba(44, 62, 80, 0.9)
+          ),
+          url("/api/placeholder/1200/400");
+        color: white;
+        padding: 100px 0;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .value-card {
+        border-left: 4px solid var(--secondary-color);
+        transition: transform 0.3s ease;
+      }
+
+      .value-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .team-member img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .get-involved-card {
+        background: var(--light-bg);
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .get-involved-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .donate-section {
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      .social-icons i {
+        font-size: 1.5rem;
+        margin: 0 10px;
+        color: var(--primary-color);
+        transition: color 0.3s ease;
+      }
+
+      .social-icons i:hover {
+        color: var(--secondary-color);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+      <div class="container">
+        <h1 class="display-4 fw-bold">Passionate Pursuit of Greatness</h1>
+        <p class="lead">
+          Empowering Kenya's youth to become tomorrow's leaders
+        </p>
+      </div>
+    </section>
+
+    <!-- Who We Are -->
+    <section class="about-section">
+      <div class="container">
+        <h2 class="text-center mb-5 display-5 fw-bold">Who We Are</h2>
+        <div class="row align-items-center">
+          <div class="col-md-6 order-md-1 order-2">
+            <div class="about-content">
+              <p class="lead text-muted">
+                Kindle is a national, non-partisan 501c organization that is
+                building a movement of young men and women who are passionate,
+                ready and eager to become the next generation of political
+                leaders, human rights advocates, professionals and
+                entrepreneurs.
+              </p>
+              <p class="text-muted">
+                Our focus is on training young adults to discover their full
+                potential in political power, human rights advocacy, and
+                entrepreneurship. We are geared to become the nation's leading
+                organization harnessing political ambition, human rights
+                advocacy, professionalism, and entrepreneurship skills.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 order-md-2 order-1 mb-4 mb-md-0">
+            <img
+              src="{% static 'images/about.jpg' %}"
+              alt="Youth empowerment"
+              class="about-image img-fluid shadow"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Our story -->
+    <section class="story-section">
+      <div class="container">
+        <div class="row text-center mb-5">
+          <div class="col-12">
+            <h2 class="display-5 fw-bold mb-4">Our Journey of Empowerment</h2>
+            <p class="mission-highlight lead">
+              "Passionate Pursuit of Greatness" - Transforming Young Lives
+              Across Kenya
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card story-card h-100 p-4 text-center">
+              <div class="story-icon">🌱</div>
+              <h3 class="h4 mb-3">Our Mission</h3>
+              <p class="text-muted">
+                Our mission is to passionately empower diverse young men and
+                women who are ready to own their political power, discover their
+                entrepreneurial skills and engage their human rights advocacy
+                potential.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card story-card h-100 p-4 text-center">
+              <div class="story-icon">🚀</div>
+              <h3 class="h4 mb-3">Our Vision</h3>
+              <p class="text-muted">
+                We aspire to pursue greatness for youth through political,
+                social, economic, and cultural empowerment by offering
+                opportunities to shape policies that benefit our communities.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card story-card h-100 p-4 text-center">
+              <div class="story-icon">🤝</div>
+              <h3 class="h4 mb-3">Our Values</h3>
+              <p class="text-muted">
+                We champion equity, impact-driven strategies, compassion,
+                adaptability, forward thinking, and open communication to
+                nurture the next generation of leaders.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Get Involved Section -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Get Involved</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="get-involved-card p-4">
+              <h3>Membership</h3>
+              <p>
+                Join our community of passionate young leaders and
+                change-makers.
+              </p>
+              <button class="btn btn-primary">Join Now</button>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="get-involved-card p-4">
+              <h3>Volunteer</h3>
+              <p>Share your skills and experience to support our mission.</p>
+              <button class="btn btn-primary">Volunteer</button>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="get-involved-card p-4">
+              <h3>Start a Chapter</h3>
+              <p>Bring Kindle to your campus or community.</p>
+              <button class="btn btn-primary">Learn More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Donate Section -->
+    <section class="donate-section py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Support Our Mission</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h3>Individual Donations</h3>
+                <p>
+                  Your contribution helps empower the next generation of
+                  leaders.
+                </p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-danger">Donate Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <h3>Corporate Partnerships</h3>
+                <p>
+                  Partner with us to make a lasting impact on youth development.
+                </p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-danger">Partner With Us</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Intersection Observer to trigger animations when elements come into view
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("slide-in");
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+        }
+      );
+
+      // Observe all columns
+      document.querySelectorAll(".col-md-4").forEach((col) => {
+        observer.observe(col);
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
+
+{% endblock %}

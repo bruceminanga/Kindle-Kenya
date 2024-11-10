@@ -1,0 +1,744 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<!-- Hero Section -->
+<section class="hero-section text-center">
+  <div class="container">
+    <h1 class="display-4 mb-2">KINDLE YOUTH EMPOWERMENT CENTER</h1>
+    <h2 class="display-5 mb-4">Passionate Pursuit of Greatness</h2>
+    <p class="lead mb-4">
+      A Kenya-based movement empowering young men and women to become the next
+      generation of political leaders, professionals, human rights advocates,
+      and entrepreneurs. We provide training, resources, and networks across
+      Kenya.
+    </p>
+    <a href="#cta-buttons" class="scroll-down-arrow">
+      <span class="arrow-icon animate-bounce-horizontal">
+        <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  </div>
+</section>
+
+<section id="cta-buttons" class="py-5">
+  <div class="container d-flex justify-content-center gap-3">
+    <button
+      class="btn btn-success btn-sm rounded-pill px-3 py-1 shadow hover-grow"
+    >
+      Unlock Your Potential - Join Our Movement
+    </button>
+    <button
+      class="btn btn-secondary btn-lg rounded-pill px-5 py-3 shadow hover-grow"
+    >
+      Invest in the Future - Donate Now
+    </button>
+    <button
+      class="btn btn-secondary btn-sm rounded-pill px-3 py-1 shadow hover-grow"
+    >
+      Lead the Change - Start a Chapter
+    </button>
+  </div>
+</section>
+<!-- Impact Overview Section -->
+<section class="impact-overview py-5">
+  <style>
+    .impact-overview {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 80px 0;
+    }
+
+    .impact-title {
+      color: #2c5282;
+      font-weight: 700;
+      position: relative;
+      margin-bottom: 3rem;
+    }
+
+    .impact-title::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: #f6ad55;
+      border-radius: 2px;
+    }
+
+    .impact-card {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      border: none;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      height: 100%;
+    }
+
+    .impact-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-number {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #2c5282;
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .stat-description {
+      color: #4a5568;
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-subtext {
+      color: #718096;
+      font-size: 0.9rem;
+    }
+
+    .impact-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #f6ad55;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 15px;
+      margin-top: 3rem;
+    }
+
+    .highlight-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #f6ad55;
+      margin-bottom: 0.5rem;
+    }
+
+    .progress-bar-wrapper {
+      background: rgba(255, 255, 255, 0.1);
+      height: 8px;
+      border-radius: 4px;
+      margin: 1rem 0;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: #f6ad55;
+      border-radius: 4px;
+      width: 0;
+      transition: width 1.5s ease;
+    }
+
+    .animate-in {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+  </style>
+
+  <div class="container">
+    <h2 class="text-center impact-title mb-5">Our Impact in Numbers</h2>
+    <p class="text-center text-muted mb-5">
+      Empowering youth across Kenya through leadership, entrepreneurship, and
+      advocacy
+    </p>
+
+    <!-- Key Statistics Cards -->
+    <div class="row g-4 mb-5">
+      <!-- Active Members -->
+      <div class="col-md-3">
+        <div class="impact-card">
+          <div class="text-center">
+            <div class="impact-icon">👥</div>
+            <div class="stat-number" data-target="1000">0</div>
+            <p class="stat-description">Active Members</p>
+            <p class="stat-subtext">Engaged in leadership and advocacy</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- College Chapters -->
+      <div class="col-md-3">
+        <div class="impact-card">
+          <div class="text-center">
+            <div class="impact-icon">🎓</div>
+            <div class="stat-number" data-target="50">0</div>
+            <p class="stat-description">College Chapters</p>
+            <p class="stat-subtext">From major universities</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success Stories -->
+      <div class="col-md-3">
+        <div class="impact-card">
+          <div class="text-center">
+            <div class="impact-icon">🌟</div>
+            <div class="stat-number" data-target="200">0</div>
+            <p class="stat-description">Success Stories</p>
+            <p class="stat-subtext">Life-changing transformations</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Partner Organizations -->
+      <div class="col-md-3">
+        <div class="impact-card">
+          <div class="text-center">
+            <div class="impact-icon">🤝</div>
+            <div class="stat-number" data-target="75">0</div>
+            <p class="stat-description">Partner Organizations</p>
+            <p class="stat-subtext">Supporting our mission</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Impact Highlights -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="highlight-box">
+          <div class="row">
+            <!-- Leadership Development -->
+            <div class="col-md-4">
+              <h4>Leadership Development</h4>
+              <div class="highlight-number">85%</div>
+              <p>of our graduates secure leadership positions</p>
+              <div class="progress-bar-wrapper">
+                <div class="progress-bar-fill" data-width="85"></div>
+              </div>
+              <p class="mt-2 small">
+                Including corporate, NGO, and government roles
+              </p>
+            </div>
+
+            <!-- Entrepreneurship -->
+            <div class="col-md-4">
+              <h4>Entrepreneurship</h4>
+              <div class="highlight-number">70%</div>
+              <p>success rate in business startups</p>
+              <div class="progress-bar-wrapper">
+                <div class="progress-bar-fill" data-width="70"></div>
+              </div>
+              <p class="mt-2 small">Sustainable ventures launched</p>
+            </div>
+
+            <!-- Human Rights Advocacy -->
+            <div class="col-md-4">
+              <h4>Human Rights Advocacy</h4>
+              <div class="highlight-number">90%</div>
+              <p>community engagement increase</p>
+              <div class="progress-bar-wrapper">
+                <div class="progress-bar-fill" data-width="90"></div>
+              </div>
+              <p class="mt-2 small">Driving positive social change</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Animate numbers when in viewport
+    function animateNumbers() {
+      const stats = document.querySelectorAll(".stat-number");
+
+      stats.forEach((stat) => {
+        const target = parseInt(stat.getAttribute("data-target"));
+        const duration = 2000; // 2 seconds
+        const step = target / (duration / 16); // 60fps
+        let current = 0;
+
+        const updateNumber = () => {
+          current += step;
+          if (current < target) {
+            stat.textContent = Math.round(current);
+            requestAnimationFrame(updateNumber);
+          } else {
+            stat.textContent = target;
+          }
+        };
+
+        if (
+          isElementInViewport(stat) &&
+          !stat.classList.contains("animate-in")
+        ) {
+          stat.classList.add("animate-in");
+          updateNumber();
+        }
+      });
+    }
+
+    // Animate progress bars when in viewport
+    function animateProgressBars() {
+      const bars = document.querySelectorAll(".progress-bar-fill");
+
+      bars.forEach((bar) => {
+        const width = bar.getAttribute("data-width");
+        if (isElementInViewport(bar) && !bar.style.width) {
+          bar.style.width = width + "%";
+        }
+      });
+    }
+
+    // Helper function to check if element is in viewport
+    function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <=
+          (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    // Run animations on scroll and load
+    window.addEventListener("scroll", () => {
+      animateNumbers();
+      animateProgressBars();
+    });
+
+    window.addEventListener("load", () => {
+      animateNumbers();
+      animateProgressBars();
+    });
+  </script>
+</section>
+
+<section class="programs-section">
+  <style>
+    .programs-section {
+      padding: 100px 0;
+      background: #f8f9fa;
+      overflow: hidden;
+    }
+
+    .program-tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .tab-button {
+      background: white;
+      border: 2px solid #2c5282;
+      color: #2c5282;
+      padding: 12px 24px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+    }
+
+    .tab-button.active {
+      background: #2c5282;
+      color: white;
+      box-shadow: 0 5px 15px rgba(44, 82, 130, 0.3);
+    }
+
+    .program-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      height: 100%;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .program-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .program-header {
+      background: linear-gradient(135deg, #2c5282, #1a365d);
+      color: white;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .program-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      background: rgba(255, 255, 255, 0.2);
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+
+    .program-content {
+      padding: 2rem;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      color: #4a5568;
+    }
+
+    .feature-item::before {
+      content: "✓";
+      margin-right: 10px;
+      color: #48bb78;
+      font-weight: bold;
+    }
+
+    .cta-button {
+      background: #f6ad55;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      border: none;
+    }
+
+    .cta-button:hover {
+      background: #ed8936;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(237, 137, 54, 0.4);
+    }
+
+    .section-title {
+      text-align: center;
+      color: #2d3748;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: #f6ad55;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .program-card {
+        margin-bottom: 2rem;
+      }
+    }
+  </style>
+
+  <div class="container">
+    <h2 class="section-title">Programs & Opportunities</h2>
+    <p class="text-center mb-5">
+      Empowering youth through comprehensive development programs
+    </p>
+
+    <div class="program-tabs">
+      <button class="tab-button active" onclick="filterPrograms('all')">
+        All Programs
+      </button>
+      <button class="tab-button" onclick="filterPrograms('college')">
+        College
+      </button>
+      <button class="tab-button" onclick="filterPrograms('highschool')">
+        High School
+      </button>
+      <button class="tab-button" onclick="filterPrograms('leadership')">
+        Leadership
+      </button>
+      <button class="tab-button" onclick="filterPrograms('advocacy')">
+        Human Rights
+      </button>
+      <button class="tab-button" onclick="filterPrograms('entrepreneurship')">
+        Entrepreneurship
+      </button>
+    </div>
+
+    <div class="row g-4">
+      <!-- College Chapters -->
+      <div class="col-lg-4 col-md-6 program-item college">
+        <div class="program-card">
+          <div class="program-header">
+            <div class="program-icon">🎓</div>
+            <h3>College Chapters</h3>
+            <p>Build leadership skills in higher education</p>
+          </div>
+          <div class="program-content">
+            <ul class="feature-list">
+              <li class="feature-item">Chapter Leadership Opportunities</li>
+              <li class="feature-item">Campus Advocacy Initiatives</li>
+              <li class="feature-item">Professional Development</li>
+              <li class="feature-item">Networking Events</li>
+            </ul>
+            <button class="cta-button">Start a Chapter</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- High School Programs -->
+      <div class="col-lg-4 col-md-6 program-item highschool">
+        <div class="program-card">
+          <div class="program-header">
+            <div class="program-icon">📚</div>
+            <h3>High School Programs</h3>
+            <p>Early leadership development</p>
+          </div>
+          <div class="program-content">
+            <ul class="feature-list">
+              <li class="feature-item">Youth Leadership Training</li>
+              <li class="feature-item">Community Service Projects</li>
+              <li class="feature-item">Mentorship Programs</li>
+              <li class="feature-item">College Preparation</li>
+            </ul>
+            <button class="cta-button">Join Program</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leadership Development -->
+      <div class="col-lg-4 col-md-6 program-item leadership">
+        <div class="program-card">
+          <div class="program-header">
+            <div class="program-icon">👥</div>
+            <h3>Leadership Development</h3>
+            <p>Cultivate essential leadership skills</p>
+          </div>
+          <div class="program-content">
+            <ul class="feature-list">
+              <li class="feature-item">Leadership Workshops</li>
+              <li class="feature-item">Public Speaking Training</li>
+              <li class="feature-item">Project Management</li>
+              <li class="feature-item">Team Building</li>
+            </ul>
+            <button class="cta-button">Enroll Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Human Rights Advocacy -->
+      <div class="col-lg-4 col-md-6 program-item advocacy">
+        <div class="program-card">
+          <div class="program-header">
+            <div class="program-icon">⚖️</div>
+            <h3>Human Rights Advocacy</h3>
+            <p>Champion social justice causes</p>
+          </div>
+          <div class="program-content">
+            <ul class="feature-list">
+              <li class="feature-item">Advocacy Training</li>
+              <li class="feature-item">Policy Research</li>
+              <li class="feature-item">Campaign Planning</li>
+              <li class="feature-item">Community Outreach</li>
+            </ul>
+            <button class="cta-button">Get Involved</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Entrepreneurship Training -->
+      <div class="col-lg-4 col-md-6 program-item entrepreneurship">
+        <div class="program-card">
+          <div class="program-header">
+            <div class="program-icon">💡</div>
+            <h3>Entrepreneurship Training</h3>
+            <p>Launch your business journey</p>
+          </div>
+          <div class="program-content">
+            <ul class="feature-list">
+              <li class="feature-item">Business Planning</li>
+              <li class="feature-item">Financial Management</li>
+              <li class="feature-item">Marketing Strategies</li>
+              <li class="feature-item">Startup Mentorship</li>
+            </ul>
+            <button class="cta-button">Start Learning</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Internship Opportunities -->
+      <div class="col-lg-4 col-md-6 program-item leadership">
+        <div class="program-card">
+          <div class="program-header">
+            <div class="program-icon">💼</div>
+            <h3>Internship Opportunities</h3>
+            <p>Gain practical experience</p>
+          </div>
+          <div class="program-content">
+            <ul class="feature-list">
+              <li class="feature-item">Professional Experience</li>
+              <li class="feature-item">Industry Exposure</li>
+              <li class="feature-item">Skill Development</li>
+              <li class="feature-item">Career Guidance</li>
+            </ul>
+            <button class="cta-button">Apply Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function filterPrograms(category) {
+      // Update active tab
+      document.querySelectorAll(".tab-button").forEach((button) => {
+        button.classList.remove("active");
+        if (
+          button.textContent.toLowerCase().includes(category) ||
+          (category === "all" && button.textContent.includes("All"))
+        ) {
+          button.classList.add("active");
+        }
+      });
+
+      // Filter programs
+      if (category === "all") {
+        document.querySelectorAll(".program-item").forEach((item) => {
+          item.style.display = "block";
+        });
+      } else {
+        document.querySelectorAll(".program-item").forEach((item) => {
+          if (item.classList.contains(category)) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      }
+    }
+  </script>
+</section>
+
+<!-- Featured success stories -->
+<section class="success-stories-section py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold">Success Stories</h2>
+          <p class="lead">
+            Explore the inspiring journeys of our program participants.
+          </p>
+        </div>
+
+        <div class="success-stories-album">
+          <!-- Political Leadership Success Story -->
+          <div class="success-story-card mb-4 shadow">
+            <div class="row g-0">
+              <div class="col-md-5">
+                <img
+                  src="{% static 'images/Sara Kimani.jpg' %}"
+                  class="img-fluid rounded-start"
+                  alt="Political Leadership"
+                />
+              </div>
+              <div class="col-md-7">
+                <div class="card-body">
+                  <span class="badge bg-primary mb-3"
+                    >Political Leadership</span
+                  >
+                  <h5 class="card-title fw-bold">Sarah Kimani</h5>
+                  <p class="quote fw-medium">
+                    "Through Kindle's leadership program, I gained the
+                    confidence to run for student government. Now I'm serving as
+                    the first female student body president at my university."
+                  </p>
+                  <p class="card-text">
+                    Sarah joined Kindle's political leadership program in 2023
+                    and has since inspired hundreds of young women to pursue
+                    leadership roles.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Human Rights Advocacy Success Story -->
+          <div class="success-story-card mb-4 shadow">
+            <div class="row g-0">
+              <div class="col-md-5">
+                <img
+                  src="{% static 'images/James Omondi.jpg' %}"
+                  class="img-fluid rounded-start"
+                  alt="Human Rights"
+                />
+              </div>
+              <div class="col-md-7">
+                <div class="card-body">
+                  <span class="badge bg-success mb-3">Human Rights</span>
+                  <h5 class="card-title fw-bold">James Omondi</h5>
+                  <p class="quote fw-medium">
+                    "Kindle gave me the tools and network to start a successful
+                    campaign for children's education rights in rural areas."
+                  </p>
+                  <p class="card-text">
+                    James has helped establish 3 new schools in underserved
+                    communities and continues to advocate for educational
+                    equality.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Entrepreneurship Success Story -->
+          <div class="success-story-card mb-4 shadow">
+            <div class="row g-0">
+              <div class="col-md-5">
+                <img
+                  src="{% static 'images/Grace Muthoni.jpg' %}"
+                  class="img-fluid rounded-start"
+                  alt="Entrepreneurship"
+                />
+              </div>
+              <div class="col-md-7">
+                <div class="card-body">
+                  <span class="badge bg-warning mb-3">Entrepreneurship</span>
+                  <h5 class="card-title fw-bold">Grace Muthoni</h5>
+                  <p class="quote fw-medium">
+                    "Kindle's entrepreneurship training helped me transform my
+                    small business idea into a thriving social enterprise."
+                  </p>
+                  <p class="card-text">
+                    Grace's eco-friendly fashion business now employs 15 young
+                    people and has received national recognition for
+                    sustainability.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
