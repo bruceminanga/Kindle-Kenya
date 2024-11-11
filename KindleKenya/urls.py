@@ -13,3 +13,7 @@ urlpatterns = [
 # serving media files eg images
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+admin.site.site_header = "Kindle Kenya Administration"
+admin.site.site_title = "My Site Title"
+admin.site.index_title = "Welcome to Portal"
