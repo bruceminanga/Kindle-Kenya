@@ -8,6 +8,7 @@ from django.conf import settings
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("app1.urls", namespace="app1")),
+    path("blog/", include("blog.urls", namespace="blog")),
 ]
 
 # serving media files eg images

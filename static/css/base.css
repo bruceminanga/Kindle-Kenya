@@ -1,0 +1,17 @@
+<!-- static/css/base.css -->
+:root {
+    --primary-color: #2c5282;
+    --secondary-color: #f6ad55;
+    --accent-color: #48bb78;
+    --dark-color: #2d3748;
+    --light-color: #f7fafc;
+}
+
+body {
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+/* Include the rest of your CSS styles here */
+

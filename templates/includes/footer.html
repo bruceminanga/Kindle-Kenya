@@ -1,0 +1,127 @@
+<style>
+    .footer {
+            background-color: #1a1a1a;
+        }
+
+        .bg-darker {
+            background-color: #141414;
+        }
+
+        .hover-danger:hover {
+            color: #dc3545 !important;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a {
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: #dc3545 !important;
+            transform: translateY(-3px);
+        }
+
+        .form-control:focus {
+            border-color: #dc3545;
+            box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+        }
+</style>
+<footer class="footer bg-dark text-white">
+    <div class="container py-5">
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-danger mb-4">About Kindle</h4>
+                <p>Empowering youth through leadership development, advocacy, and entrepreneurship training across Kenya.</p>
+                <div class="mt-4">
+                    <p class="mb-1"><i class="fas fa-map-marker-alt me-2 text-danger"></i>1615 West Main Street, Arlington Suite 319, Tx 76010</p>
+                    <p class="mb-1"><i class="fas fa-envelope me-2 text-danger"></i>jenishisia@outlook.com</p>
+                    <p class="mb-1"><i class="fas fa-phone me-2 text-danger"></i>+1 682 320 7668, +254 725 820 732</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-danger mb-4">Quick Links</h4>
+                <ul class="list-unstyled">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'app1:about-us' %}">About</a>
+                      </li>
+                      <li class="mb-2">
+                        <a
+                          href="#"
+                          class="text-white text-decoration-none hover-danger"
+                        >
+                          <i class="fas fa-chevron-right me-2 text-danger"></i>Programs
+                        </a>
+                      </li>
+                    <li class="mb-2">
+                        <a href="#" class="text-white text-decoration-none hover-danger">
+                            <i class="fas fa-chevron-right me-2 text-danger"></i>Get Involved
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="" class="text-white text-decoration-none hover-danger">
+                            <i class="fas fa-chevron-right me-2 text-danger"></i>Donate
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-danger mb-4">Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#" class="btn btn-dark btn-lg me-2 mb-2 rounded-circle">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="btn btn-dark btn-lg me-2 mb-2 rounded-circle">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="btn btn-dark btn-lg me-2 mb-2 rounded-circle">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="btn btn-dark btn-lg me-2 mb-2 rounded-circle">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                <div class="mt-4">
+                    <p>Follow us on social media for updates and inspiration.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-danger">Newsletter</h4>
+                <p>Subscribe to our newsletter for updates on our programs and impact.</p>
+                <form method="post" action="{% url 'app1:newsletter_subscribe' %}">
+                    {% csrf_token %}
+                    <div class="d-flex">
+                        <input type="email" name="email" class="form-control" placeholder="Your email" required>
+                        <button class="btn btn-danger ms-2" type="submit">Subscribe</button>
+                    </div>
+                </form>
+                {% if messages %}
+                <div class="messages mt-3">
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-footer py-3 bg-darker">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2024 Kindle Youth Empowerment Center. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-white text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

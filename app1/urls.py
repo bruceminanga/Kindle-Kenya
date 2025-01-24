@@ -18,4 +18,8 @@ urlpatterns = [
         NewsletterSubscribeView.as_view(),
         name="newsletter_subscribe",
     ),
+    # donation feature
+    path("donate/", views.donation_view, name="donation"),
+    path("donate/process/", views.process_donation, name="process_donation"),
+    path("submit-partnership/", views.submit_partnership, name="submit_partnership"),
 ]
