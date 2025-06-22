@@ -29,3 +29,8 @@ tzdata==2025.2
 urllib3==2.5.0
 vine==5.1.0
 wcwidth==0.2.13
+
+gunicorn  # A production-grade WSGI server
+dj-database-url # To use Render's database URL
+psycopg2-binary # Driver for PostgreSQL
+whitenoise # To serve static files efficiently
